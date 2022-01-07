@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HIT</title>
+	<style>
+		*{
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+		body{
+
+			overflow: hidden;
+			display: inline-flex;
+			flex-wrap: wrap;
+		}
+		div{
+	
+			width: 55px;
+			height: 55px;
+			background: tomato;
+
+
+		}
+		.fin{
+			text-align: center;
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 45px;
+			background: orange;
+			z-index: 1003;
+		}
+		.fin p{
+			font-size: 33px;
+			color: white;
+		}
+		.one{
+			position: absolute;
+			left: 5%;
+			bottom: -56px;
+
+		}
+		.two{
+			position: absolute;
+			left: 38%;
+			bottom: -56px;
+
+		}
+		.three{
+			position: absolute;
+			left: 71%;
+			bottom: -56px;
+
+		}
+		.up{
+			animation: goup;
+			animation-duration: 6.8s ;
+		}
+		@keyframes goup{
+			0%{top: 730px;}
+			100%{top: 45px;}
+		}
+		.all{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 730px;
+			background: rgb(24, 24, 24);
+		}
+	</style>
+</head>
+<body>
+	
+<div class="fin">
+	<p id="scr">Score: 0</p>
+</div>
+<div class="all">
+<div onclick="reone();"class="one"></div>
+<div onclick="retwo();"class="two"></div>
+<div onclick="rethree();"class="three"></div>
+</div>
+
+</body>
+<script type="text/javascript">
+	let core=0;
+	one=document.querySelector('.one');
+	one.classList.add('up');
+	two=document.querySelector('.two');
+	two.classList.add('up');
+	three=document.querySelector('.three');
+	three.classList.add('up');
+
+	function reone(){
+		
+		score=document.getElementById('scr');
+		one=document.querySelector('.one');
+		one.classList.remove('up');
+		
+		score.innerText="Score: "+(core+=1);
+
+		setTimeout(()=>{
+		one.classList.add('up');
+
+		},10);
+	}
+	function retwo(){
+		two=document.querySelector('.two');
+		two.classList.remove('up');
+		score=document.getElementById('scr');
+		score.innerText="Score: "+(core+=1);
+		setTimeout(()=>{
+		two.classList.add('up');
+
+		},10);
+	}
+	function rethree(){
+		three=document.querySelector('.three');
+		three.classList.remove('up');
+		score=document.getElementById('scr');
+		score.innerText="Score: "+(core+=1);
+		setTimeout(()=>{
+		three.classList.add('up');
+
+		},10);
+	}
+	
+	
+	
+	
+</script>
+</html>
